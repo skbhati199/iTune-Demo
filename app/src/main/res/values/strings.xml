@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">iTunes Demo</string>
+    <string name="empty_screen">Empty</string>
+    <string name="please_retry">Please retry</string>
+    <string name="retry">Retry</string>
+    <string name="title_activity_detials">Detials</string>
+</resources>
