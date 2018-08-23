@@ -18,10 +18,13 @@ package com.metro.itunesdemo.utils;
 
 import android.content.Context;
 import android.databinding.BindingAdapter;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.metro.itunesdemo.R;
 import com.metro.itunesdemo.data.remote.model.Result;
 import com.metro.itunesdemo.data.remote.model.SearchModel;
 import com.metro.itunesdemo.ui.adapter.ITuneRecyclerViewAdapter;
@@ -54,6 +57,9 @@ public final class BindingUtils {
     @BindingAdapter("imageUrl")
     public static void setImageUrl(ImageView imageView, String url) {
         Context context = imageView.getContext();
-        Glide.with(context).load(url).into(imageView);
+        Glide.with(context).load(url)
+                .fallback(R.drawable.placeholder)
+                .error(new ColorDrawable(Color.RED))
+                .into(imageView);
     }
 }
